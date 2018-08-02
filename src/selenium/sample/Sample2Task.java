@@ -62,7 +62,6 @@ public class Sample2Task {
         System.out.println("\n*************\n");
 
 //        get list of class "test"
-        System.out.println("\n*************\n");
         List <WebElement> allElements = driver.findElements(By.className("test"));
         for (WebElement element: allElements){
             System.out.println(element.getText());
