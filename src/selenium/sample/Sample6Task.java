@@ -35,12 +35,19 @@ public class Sample6Task {
 //         TODO:
 ////         1-2 ways to write xapth to
 //        "Heading 2 text":
+        System.out.println(driver.findElement(By.xpath("//*[@id='heading_2']")).getText());
 //        "Test Text 1"
+        System.out.println(driver.findElement(By.xpath("//*[@class='test']")).getText());
 //        "Test Text 2"
+        System.out.println(driver.findElement(By.xpath("//*[@class='twoTest']")).getText());
 //        "Test Text 3"
+        System.out.println(driver.findElement(By.xpath("//*[contains(text(), '3')]")).getText());
 //        "Test Text 4"
+        System.out.println(driver.findElement(By.xpath("//*[contains(text(), '4')]")).getText());
 //        "Test Text 5"
+        System.out.println(driver.findElement(By.xpath("//*[@class='Test']")).getText());
 //        "This is also a button"
+        System.out.println(driver.findElement(By.xpath("//*[@name='randomButton2']")).getAttribute("value"));
     }
 
     @Test
