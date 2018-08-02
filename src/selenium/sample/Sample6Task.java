@@ -55,9 +55,14 @@ public class Sample6Task {
 //         TODO:
 //         1-2 ways to write css to
 //        "Heading 2 text":
+        System.out.println(driver.findElement(By.cssSelector("#heading_2")).getText());
 //        "Test Text 1"
+        System.out.println(driver.findElement(By.cssSelector(".test")).getText());
 //        "Test Text 2"
+        System.out.println(driver.findElement(By.cssSelector(".twoTest")).getText());
 //        "Test Text 3"
+        System.out.println(driver.findElement(By.cssSelector("#test3 p:nth-of-type(1)")).getText());
 //        "This is also a button"
+        System.out.println(driver.findElement(By.cssSelector("input[name='randomButton2']")).getAttribute("value"));
     }
 }
