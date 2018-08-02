@@ -19,7 +19,7 @@ public class Sample1Task {
          System.out.println(driver.getTitle());
 
          System.out.println(driver.getCurrentUrl());
-         
+
          driver.close();
 //         TODO:
 //         define driver

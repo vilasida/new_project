@@ -35,24 +35,49 @@ public class Sample2Task {
     @Test
      public void findElementByID() throws Exception {
 //         TODO:
+        driver.findElement(By.id("heading_2")).getText(); //this line is not oligatory
+        System.out.println(driver.findElement(By.id("heading_2")).getText()); //first line is included here
+
 //         get text "Heading 2 text" using id
     }
 
     @Test
     public void findElementByName() throws Exception {
 //         TODO:
+        driver.findElement(By.name("randomButton2")).getText();
+        System.out.println(driver.findElement(By.name("randomButton2")).getText());
+        driver.findElement(By.name("randomButton2")).getAttribute("value");
+        System.out.println(driver.findElement(By.name("randomButton2")).getAttribute("value"));
+        driver.findElement(By.name("randomButton2")).getAttribute("id");
+        System.out.println(driver.findElement(By.name("randomButton2")).getAttribute("id"));
 //         get attribute "id" and "value" of button "This is also a button" using name
+        //<input type="button" id="buttonId" value="This is also a button" name="randomButton2">
     }
 
     @Test
     public void findElementByClassFirst() throws Exception {
 //         TODO:
-//         get first text of class "test" (should be "Test Text 1")
+        driver.findElement(By.className("test")).getText();
+        System.out.println(driver.findElement(By.className("test")).getText());
+
+        //         get first text of class "test" (should be "Test Text 1")
     }
 
     @Test
     public void findElementByClassAll() throws Exception {
 //         TODO:
+        System.out.println(driver.findElements(By.className("test")).size());
+
+        List <WebElement> allElementsWithClass = driver.findElements(By.className("test"));
+
+        for (WebElement elementWithClass : allElementsWithClass) {
+            System.out.println(elementWithClass.getText());
+
+        }
+        System.out.println("--------------------------");
+        System.out.println(driver.findElements(By.className("test")).get(2).getText());
+
+
 //         get size text of class "test" (should be 5)
 //         get text of class "test"
 //         get third text of class "test" (should be "Test Text 4")
