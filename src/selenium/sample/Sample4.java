@@ -42,17 +42,17 @@ public class Sample4 {
 
     @Test
     public void clickLink() throws Exception {
-        assertEquals(base_url, driver.getCurrentUrl());
-        driver.findElement(By.id("link1")).click();
-        assertEquals("Link Page 1", driver.findElement(By.id("h1")).getText());
-        assertFalse(driver.getCurrentUrl().equals(base_url));
-        assertEquals("https://kristinek.github.io/test-sample/examples/link1", driver.getCurrentUrl());
+        assertEquals(base_url, driver.getCurrentUrl()); //pārbauda vai esošā lapa ir baselink
+        driver.findElement(By.id("link1")).click();  //uzklikšķina uz elementa
+        assertEquals("Link Page 1", driver.findElement(By.id("h1")).getText());  //pārbauda vai teksts atbilst
+        assertFalse(driver.getCurrentUrl().equals(base_url)); //pārbauda ka cits links
+        assertEquals("https://kristinek.github.io/test-sample/examples/link1", driver.getCurrentUrl()); //pārbauda vai jaunais links ir pareizs
     }
 
     @Test
     public void clickButtonAndSeeOrHideText() throws Exception {
-        WebElement text = driver.findElement(By.id("show_me"));
-        WebElement showButton = driver.findElement(By.id("show_text"));
+        WebElement text = driver.findElement(By.id("show_me"));   //atrod  paragrāfu ar tekstu
+        WebElement showButton = driver.findElement(By.id("show_text"));  //show me poga
         WebElement hideButton = driver.findElement(By.name("hide_text"));
 
         assertFalse(text.isDisplayed()); // "I am here!" is NOT seen

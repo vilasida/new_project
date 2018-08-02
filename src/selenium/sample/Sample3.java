@@ -51,7 +51,6 @@ public class Sample3 {
 //        Actual   :Base page
         assertEquals(expected, actual);
     }
-
     @Test
     public void assertEqualsExampleInt() throws Exception {
         int expectedNumberOfElements = 5;
@@ -70,7 +69,6 @@ public class Sample3 {
         // fail:
 //        assertTrue(false);
     }
-
     @Test
     public void assertFalseExample() throws Exception {
         String elementTextOnPage = driver.findElement(By.cssSelector(".unbelievable")).getText();
@@ -82,13 +80,11 @@ public class Sample3 {
         // pass:
         assertFalse(false);
     }
-
     @Test
     public void failExampleWithDefaultError() throws Exception {
         fail();
         // will throw an java.lang.AssertionError
     }
-
     @Test
     public void failExampleWithCustomError() throws Exception {
         fail("I want this test to fail, so will!");

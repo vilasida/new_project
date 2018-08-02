@@ -22,7 +22,6 @@ public class Sample4Task {
         System.setProperty("webdriver.chrome.driver", libWithDriversLocation + "chromedriver.exe");
         // declaration above:
         driver = new ChromeDriver();
-
         //open page:
         driver.get(base_url);
     }
@@ -36,6 +35,21 @@ public class Sample4Task {
     @Test
     public void enterNumber() throws Exception {
 //         TODO:
+        WebElement result=driver.findElement(By.id("result_button_number")); //atrod pogu result
+        WebElement clearResult=driver.findElement(By.id("clear_result_button_number")); //atrod clear pogu
+        WebElement field= driver.findElement(By.name("vfb-9"));
+        WebElement text=driver.findElement(By.id("result_number"));
+        field.clear(); //notīra ja kaut kas jau bija sākumā
+        field.sendKeys("10"); //aizsūta jaunu virkni
+        assertFalse("error1",clearResult.isEnabled()); //nav enabled
+        result.click(); //piespiež result pogu
+        assertTrue("error2",text.isDisplayed()); //pārbauda vai teksts ir attēlots
+        assertTrue("error3"+text.getText(),text.getText().equals("You entered number: \"10\"")); //pārbauda vai teksts atbilst
+        assertTrue("clickable",clearResult.isEnabled());
+        clearResult.click(); //notīra rezultātu
+        assertEquals("You entered number: \"10\"",text.getAttribute("innerText")); //pārbauda vai teksts ir tāds pats
+        assertFalse("error5",text.isDisplayed()); //pārbauda vai teksts nav attēlots
+
 //        enter a number under "Number"
 //        check that button is not clickable
 //        click on "Result" button
@@ -49,6 +63,10 @@ public class Sample4Task {
     @Test
     public void clickOnLink() throws Exception {
 //         TODO:
+        assertEquals(base_url, driver.getCurrentUrl());
+        driver.findElement(By.id("homepage_link")).click();
+        assertFalse(driver.getCurrentUrl().equals(base_url));
+        assertEquals("https://kristinek.github.io/test-sample/", driver.getCurrentUrl());
 //        check current url is base_url
 //        click on "This is a link to Homepage"
 //        check that current url is not base_url
