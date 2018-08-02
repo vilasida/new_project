@@ -59,7 +59,9 @@ public class Sample4Task {
 //        click on "Clear Result"
         clearButton.click();
 //        check that the text is still ("You entered number: "NUMBER YOU ENTERED""), but it is not displayed
+        assertFalse(result_num.isDisplayed());
         assertTrue(result_num.getAttribute("textContent").equals(expectedNum));
+        System.out.println(result_num.getAttribute("textContent"));
     }
 
     @Test
