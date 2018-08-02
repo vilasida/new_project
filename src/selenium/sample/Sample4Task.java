@@ -42,9 +42,12 @@ public class Sample4Task {
         field.clear(); //notīra ja kaut kas jau bija sākumā
         field.sendKeys("10"); //aizsūta jaunu virkni
         assertFalse("error1",clearResult.isEnabled()); //nav enabled
+
+        assertFalse("error2",text.isDisplayed());
         result.click(); //piespiež result pogu
         assertTrue("error2",text.isDisplayed()); //pārbauda vai teksts ir attēlots
-        assertTrue("error3"+text.getText(),text.getText().equals("You entered number: \"10\"")); //pārbauda vai teksts atbilst
+        assertTrue("error3",text.getText().equals("You entered number: \"10\"")); //pārbauda vai teksts atbilst
+        // can also use getAtribute("value");
         assertTrue("clickable",clearResult.isEnabled());
         clearResult.click(); //notīra rezultātu
         assertEquals("You entered number: \"10\"",text.getAttribute("innerText")); //pārbauda vai teksts ir tāds pats

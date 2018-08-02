@@ -6,9 +6,11 @@ import org.junit.Test;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 public class Sample5Task {
@@ -36,6 +38,13 @@ public class Sample5Task {
     @Test
     public void goToAlertedPageViaButton() throws Exception {
 //         TODO:
+          WebElement alButon=driver.findElement(By.className("w3-blue"));
+          alButon.click();
+          Alert alert = driver.switchTo().alert();
+          alert.accept();
+          assertEquals("error1","Booooooooo!", alert.getText());
+          alert.accept();
+          assertEquals("error2",driver.getCurrentUrl(),("https://kristinek.github.io/test-sample/examples/al_p"));
 //        click on "To go to alerted page press Ok. Or stay here" button
 //        switch to alert
 //        click ok
@@ -48,6 +57,12 @@ public class Sample5Task {
     @Test
     public void doNotGoToAlertedPageViaButton() throws Exception {
 //         TODO:
+        driver.get("https://kristinek.github.io/test-sample/examples/al_and_pu");
+        WebElement alButon=driver.findElement(By.className("w3-blue"));
+        alButon.click();
+        Alert alert = driver.switchTo().alert();
+        alert.dismiss();
+        assertEquals(driver.findElement(By.id("textForAlerts")).getText(),"So you desided to say? Good!");
 //        click on "To go to alerted page press Ok. Or stay here" button
 //        switch to alert
 //        click cancel

@@ -51,7 +51,7 @@ public class Sample5 {
         Alert alert = driver.switchTo().alert();
         assertEquals("I am an alert box!", alert.getText());
 
-        alert.accept();
+        alert.accept(); //click okey  dismiss=cancel
         assertEquals("", driver.findElement(By.id("textForAlerts")).getText());
     }
 
