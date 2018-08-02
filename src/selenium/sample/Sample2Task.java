@@ -60,8 +60,16 @@ public class Sample2Task {
 //         get size text of class "test" (should be 5)
         System.out.println(driver.findElements(By.className("test")).size());
 //         get text of class "test"
-        System.out.println(driver.findElement(By.className("test")).getText());
+        List <WebElement> allElementsWithClass = driver.findElements(By.className("text"));
+        for (WebElement elementWithClass : allElementsWithClass) {
+            System.out.println(elementWithClass.getText());
+        }
 //         get third text of class "test" (should be "Test Text 4")
         System.out.println(driver.findElements(By.className("test")).get(2).getText());
+
+        List <WebElement> allElementsWithClass = driver.findElements(By.className("text"));
+        for (WebElement elementWithClass : allElementsWithClass) {
+            System.out.println(elementWithClass.getText());
+
     }
 }
