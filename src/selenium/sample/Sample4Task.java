@@ -54,14 +54,12 @@ public class Sample4Task {
         assertTrue(result_num.isDisplayed());
 //        check that the correct Text appears ("You entered number: "NUMBER YOU ENTERED"")
         assertTrue(result_num.getText().equals(expectedNum));
-        System.out.println(result_num.getText());
 //        check that the button "Clear Result" is clickable now
         assertTrue(clearButton.isEnabled());
 //        click on "Clear Result"
         clearButton.click();
 //        check that the text is still ("You entered number: "NUMBER YOU ENTERED""), but it is not displayed
-        assertTrue(result_num.getText().equals(expectedNum));
-        assertFalse(result_num.isDisplayed());
+        assertTrue(result_num.getAttribute("textContent").equals(expectedNum));
     }
 
     @Test
