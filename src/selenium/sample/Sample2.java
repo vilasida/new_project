@@ -24,6 +24,7 @@ public class Sample2 {
 
         //open page:
         driver.get("https://kristinek.github.io/test-sample/examples/loc");
+        driver.findElement(By.id("heading-1")).getText();
     }
 
     // method which is being run after each test
