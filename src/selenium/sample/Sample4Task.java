@@ -36,22 +36,72 @@ public class Sample4Task {
     @Test
     public void enterNumber() throws Exception {
 //         TODO:
+        WebElement inputFieldNumber = driver.findElement(By.name("vfb-9"));
+        WebElement resultButton = driver.findElement(By.id("result_button_number"));
+        WebElement clearResultButton = driver.findElement(By.id("clear_result_button_number"));
+        WebElement resultText = driver.findElement(By.id("result_number"));
+
 //        enter a number under "Number"
+        String originalInuputFieldNumber = "5";
+        String Number1 = "79";
+        String Number2 = "You entered number: ";
+
 //        check that button is not clickable
+        assertTrue(inputFieldNumber.isDisplayed());
+        assertTrue(resultButton.isEnabled());
+        assertFalse(clearResultButton.isEnabled());
+        assertFalse(resultText.isDisplayed());
+
+        assertEquals(inputFieldNumber.getAttribute("value"), originalInuputFieldNumber);
+        inputFieldNumber.clear();
+        inputFieldNumber.sendKeys(Number1);
+
+        assertEquals(inputFieldNumber.getAttribute("value"), Number1);
+
 //        click on "Result" button
+        resultButton.click();
+
 //        check that text is displayed
-//        check that the correct Text appears ("You entered number: "NUMBER YOU ENTERED"")
-//        check that the button "Clear Result" is clickable now
-//        click on "Clear Result"
-//        check that the text is still ("You entered number: "NUMBER YOU ENTERED""), but it is not displayed
+        assertTrue(resultButton.isEnabled());
+
+        assertTrue(resultText.isDisplayed());
+
+        //        check that the correct Text appears ("You entered number: "NUMBER YOU ENTERED"")
+        assertEquals(Number2 + "\"" + Number1 + "\"", resultText.getText());
+
+        //        check that the button "Clear Result" is clickable now
+        assertTrue(clearResultButton.isEnabled());
+
+        //        click on "Clear Result"
+        clearResultButton.click();
+
+//        check that the text is still (""), but it is not displayed
+        assertFalse(resultText.isDisplayed());
+        assertEquals("", resultText.getText());
+
+
     }
 
     @Test
     public void clickOnLink() throws Exception {
 //         TODO:
-//        check current url is base_url
-//        click on "This is a link to Homepage"
-//        check that current url is not base_url
-//        verify that current url is homepage
+        //check current url is base_url
+        assertEquals(base_url, driver.getCurrentUrl());
+
+        //click on "This is a link to Homepage"
+        driver.findElement(By.id("homepage_link")).click();
+
+        //check that current url is not base_url
+        assertEquals("This is a link to Homepage", driver.findElement(By.id("homepage_link")).getText());
+        assertNotEquals(driver.getCurrentUrl(), base_url);
+
+        // verify that current url is homepage
+        assertEquals("https://kristinek.github.io/test-sample/", driver.getCurrentUrl());
+
+
+
+
+
+
     }
 }
