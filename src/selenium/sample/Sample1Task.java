@@ -24,7 +24,7 @@ public class Sample1Task {
 //        get URL of current page
         System.out.println(Chromedriver.getCurrentUrl());
 //        sleep for 10 seconds
-        //Thread.sleep(10000);
+        Thread.sleep(10000);
 //         close browser
         Chromedriver.close();
     }
