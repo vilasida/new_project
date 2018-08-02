@@ -49,7 +49,9 @@ public class Sample3 {
 //        org.junit.ComparisonFailure:
 //        Expected :Not base page
 //        Actual   :Base page
-        assertEquals(expected, actual);
+
+
+            assertEquals(expected, actual);
     }
 
     @Test
