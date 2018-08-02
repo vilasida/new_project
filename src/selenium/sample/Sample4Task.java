@@ -35,15 +35,33 @@ public class Sample4Task {
 
     @Test
     public void enterNumber() throws Exception {
+        String sendNum = "10";
+        String expectedNum = "You entered number: \"10\"";
+        WebElement numberInput = driver.findElement(By.id("number"));
+        WebElement result_num = driver.findElement(By.id("result_number"));
+        WebElement resultButton = driver.findElement(By.id("result_button_number"));
+        WebElement clearButton = driver.findElement(By.id("clear_result_button_number"));
 //         TODO:
 //        enter a number under "Number"
+        numberInput.clear();
+        numberInput.sendKeys(sendNum);
 //        check that button is not clickable
+        assertTrue(resultButton.isEnabled());
+        assertFalse(clearButton.isEnabled());
 //        click on "Result" button
+        resultButton.click();
 //        check that text is displayed
+        assertTrue(result_num.isDisplayed());
 //        check that the correct Text appears ("You entered number: "NUMBER YOU ENTERED"")
+        assertTrue(result_num.getText().equals(expectedNum));
+        System.out.println(result_num.getText());
 //        check that the button "Clear Result" is clickable now
+        assertTrue(clearButton.isEnabled());
 //        click on "Clear Result"
+        clearButton.click();
 //        check that the text is still ("You entered number: "NUMBER YOU ENTERED""), but it is not displayed
+        assertTrue(result_num.getText().equals(expectedNum));
+        assertFalse(result_num.isDisplayed());
     }
 
     @Test
