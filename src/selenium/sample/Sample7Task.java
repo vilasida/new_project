@@ -57,7 +57,7 @@ public class Sample7Task {
 //        click result
         driver.findElement(By.id("result_button_ratio")).click();
 //        check that text 'You selected value(s): Option 2, Option 3' is being displayed
-
+        assertEquals("You selected value(s): Option 2, Option 3", driver.findElement(By.id("result_checkbox")).getText());
     }
 
 
