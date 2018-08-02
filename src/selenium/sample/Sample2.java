@@ -23,6 +23,7 @@ public class Sample2 {
         driver = new ChromeDriver();
 
         //open page:
+       // driver.get("https://kristinek.github.io/test-sample/");
         driver.get("https://kristinek.github.io/test-sample/examples/loc");
     }
 
@@ -35,7 +36,9 @@ public class Sample2 {
     @Test
      public void findElementByID() throws Exception {
         // works:
+        //System.out.println(driver.findElement(By.id("h1")).getText());
         System.out.println(driver.findElement(By.id("heading_1")).getText());
+
         // will fail with error NoSuchElementException
         // no such element:
         // Unable to locate element: {"method":"id","selector":"headingasdga"}
