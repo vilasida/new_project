@@ -68,6 +68,12 @@ public class Sample3Task {
     public void failTask() throws Exception {
 //        TODO:
 //        check that none of items with class "test" contain number 190
-
+        int i;
+        int s = driver.findElements(By.className("test")).size();
+        for (i = 0; i < s; i++) {
+            String numberInTest = driver.findElements(By.className("test")).get(i).getText();
+            // System.out.println(driver.findElements(By.className("test")).get(i).getText());
+            assertFalse(numberInTest.contains("190"));
+        }
     }
 }
