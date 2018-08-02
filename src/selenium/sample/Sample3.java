@@ -35,7 +35,7 @@ public class Sample3 {
 
     @Test
     public void assertEqualsExampleString() throws Exception {
-        String expected = "Heading 1";
+        String expected = "Heading 2";
         String actual = driver.findElement(By.id("heading_1")).getText();
         assertEquals(expected, actual);
     }
@@ -63,7 +63,7 @@ public class Sample3 {
     public void assertTrueExamples() throws Exception {
         String elementTextOnPage = driver.findElement(By.cssSelector(".unbelievable")).getText();
         assertTrue(elementTextOnPage.equals("unbelievable sample text"));
-        assertTrue(elementTextOnPage.contains("ample"));
+        assertTrue("Expecting the element with class unbelievable to have text 'ammple'", elementTextOnPage.contains("amplemmm"));
         assertTrue(elementTextOnPage.equalsIgnoreCase("unBELIEVable sAMPle Text"));
         // pass:
         assertTrue(true);
