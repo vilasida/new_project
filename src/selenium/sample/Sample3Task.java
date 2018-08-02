@@ -48,7 +48,12 @@ public class Sample3Task {
         String secondButtonValue = driver.findElement(By.name("randomButton2")).getAttribute("value");
         assertTrue(secondButtonValue.equalsIgnoreCase("this is Also a Button"));
 //         fail with custom error message:
-        assertTrue("Custom error message", false);
+        try {
+            assertTrue(false);
+        } catch (AssertionError e) {
+            System.err.println("Failed with custom message");
+            e.printStackTrace();
+        }
     }
 
     @Test
@@ -63,5 +68,6 @@ public class Sample3Task {
     public void failTask() throws Exception {
 //        TODO:
 //        check that none of items with class "test" contain number 190
+
     }
 }
