@@ -69,7 +69,9 @@ public class Sample4Task {
         buttonClear.click();
 
 //        check that the text is still ("You entered number: "NUMBER YOU ENTERED""), but it is not displayed
-        actualText = textMessage.getText();
+//        actualText = textMessage.getText();
+        assertTrue(actualText.contentEquals(""));
+        //actualText = textMessage.getAttribute("content");
         assertTrue(actualText.contentEquals(""));
         assertFalse(textMessage.isDisplayed());
     }
@@ -78,7 +80,7 @@ public class Sample4Task {
     public void clickOnLink() throws Exception {
 //         TODO:
 //        check current url is base_url
-        assertEquals(base_url, driver.getCurrentUrl(),);
+        assertEquals(base_url, driver.getCurrentUrl());
 
 //        click on "This is a link to Homepage"
         WebElement linkHome = driver.findElement(By.linkText("This is a link to Homepage"));
