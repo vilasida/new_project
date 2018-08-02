@@ -43,9 +43,9 @@ public class Sample6Task {
 //        "Test Text 3"
         System.out.println(driver.findElement(By.xpath("//*[contains(text(), '3')]")).getText());
 //        "Test Text 4"
-        System.out.println(driver.findElement(By.xpath("//*[contains(text(), '4')]")).getText());
+        System.out.println(driver.findElement(By.xpath("//*[@id='test3']/p[2]")).getText());
 //        "Test Text 5"
-        System.out.println(driver.findElement(By.xpath("//*[@class='Test']")).getText());
+        System.out.println(driver.findElement(By.xpath("/html/body/div[6]/p[1]")).getText());
 //        "This is also a button"
         System.out.println(driver.findElement(By.xpath("//*[@name='randomButton2']")).getAttribute("value"));
     }
