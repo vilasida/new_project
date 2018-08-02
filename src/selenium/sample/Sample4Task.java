@@ -66,8 +66,12 @@ public class Sample4Task {
     public void clickOnLink() throws Exception {
 //         TODO:
 //        check current url is base_url
+        assertEquals(base_url, driver.getCurrentUrl());
 //        click on "This is a link to Homepage"
+        driver.findElement(By.linkText("This is a link to Homepage")).click();
 //        check that current url is not base_url
+        assertNotEquals(base_url, driver.getCurrentUrl());
 //        verify that current url is homepage
+        assertEquals(driver.getCurrentUrl(), "https://kristinek.github.io/test-sample/");
     }
 }
