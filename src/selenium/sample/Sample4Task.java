@@ -36,6 +36,18 @@ public class Sample4Task {
     @Test
     public void enterNumber() throws Exception {
 //         TODO:
+        WebElement enterNumber = driver.findElement(By.id("number"));
+        WebElement resultButton = driver.findElement(By.id("result_button_number"));
+        WebElement result = driver.findElement(By.id("result_number"));
+        WebElement clearButton = driver.findElement(By.id("clear_result_button_number"));
+        int number = 67;
+        String stringNumber2 = "You entered number: ";
+
+        enterNumber.clear();
+        assertEquals(enterNumber.getAttribute("value"), "");
+        enterNumber.sendKeys(String.valueOf(number));
+
+        assertEquals(enterNumber.getAttribute("value"), String.valueOf(number));
 //        enter a number under "Number"
 //        check that button is not clickable
 //        click on "Result" button
@@ -50,6 +62,10 @@ public class Sample4Task {
     public void clickOnLink() throws Exception {
 //         TODO:
 //        check current url is base_url
+        assertEquals(base_url, driver.getCurrentUrl());
+        driver.findElement(By.id("homepage_link")).click();
+        assertFalse(driver.getCurrentUrl().equals(base_url));
+        assertEquals("https://kristinek.github.io/test-sample/", driver.getCurrentUrl());
 //        click on "This is a link to Homepage"
 //        check that current url is not base_url
 //        verify that current url is homepage
