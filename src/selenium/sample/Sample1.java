@@ -2,6 +2,7 @@ package selenium.sample;
 
 
 import org.junit.Test;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -16,6 +17,7 @@ public class Sample1 {
 
         //open test homepage
         driver.get("https://kristinek.github.io/test-sample/");
+        //driver.findElement(By.id());
         //driver.get("https://google.com");
 
         //get title of page
