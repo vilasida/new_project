@@ -74,8 +74,8 @@ public class Sample4Task {
         WebElement link= driver.findElement(By.id("homepage_link"));
         link.click();
 //        check that current url is not base_url
-        assertTrue(base_url, !equals(home_url));
+        assertFalse(driver.getCurrentUrl(), equals(home_url));
 //        verify that current url is homepage
-        assertEquals(home_url, home_url2);
+        assertEquals(home_url, driver.getCurrentUrl());
     }
 }
