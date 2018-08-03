@@ -130,6 +130,12 @@ public class Sample7Task {
     public void chooseDateViaTextBoxBonus() throws Exception {
 //         TODO:
 //        enter date '2 of May 1959' using text
+        driver.findElement(By.id("vfb-8")).sendKeys("05/02/1959");
+
+        // Date-Result button's ID is same as Text-Result's
+        driver.findElements(By.id("result_button_text_area")).get(1).click();
+
 //        check that correct date is added
+        assertEquals("You entered date: 05/02/1959", driver.findElement(By.id("result_date")).getText());
     }
 }
