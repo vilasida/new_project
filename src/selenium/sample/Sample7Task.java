@@ -106,7 +106,24 @@ public class Sample7Task {
     public void chooseDateViaCalendarBonus() throws Exception {
 //         TODO:
 //        enter date '4 of July 2007' using calendar widget
+        WebElement dateBox = driver.findElement(By.id("vfb-8"));
+
+        // Open calendar widget
+        dateBox.click();
+        WebElement dateWidget = driver.findElement(By.id("ui-datepicker-div"));
+
+        // Clicking months back to Jul 2007
+        for (int i = 0; i < 133; i++) {
+            dateWidget.findElement(By.className("ui-datepicker-prev")).click();
+        }
+        // Set day to 4
+        dateWidget.findElement(By.xpath("//a[text()='4']")).click();
+
 //        check that correct date is added
+
+        // Date-Result button's ID is same as Text-Result's
+        driver.findElements(By.id("result_button_text_area")).get(1).click();
+        assertEquals("You entered date: 07/04/2007", driver.findElement(By.id("result_date")).getText());
     }
 
     @Test
