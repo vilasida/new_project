@@ -70,11 +70,19 @@ public class Sample7Task {
             assertFalse(driver.findElement(By.name("vfb-7")).isSelected());
         }
 //        select  "Option 3"
+        driver.findElement(By.id("vfb-7-3")).click();
 //        check that "Option 1" and "Option 2' are not select, but "Option 3" is selected
+        assertFalse(driver.findElement(By.id("vfb-7-1")).isSelected());
+        assertFalse(driver.findElement(By.id("vfb-7-2")).isSelected());
 //        select  "Option 1"
+        driver.findElement(By.id("vfb-7-1")).click();
 //        check that "Option 2" and "Option 3' are not select, but "Option 1" is selected
+        assertFalse(driver.findElement(By.id("vfb-7-2")).isSelected());
+        assertFalse(driver.findElement(By.id("vfb-7-3")).isSelected());
 //        click result
+        driver.findElement(By.id("result_button_ratio")).click();
 //        check that 'You selected option: Option 1' text is being displayed
+        assertEquals("You selected option: Option 1", driver.findElement(By.id("result_radio")).getText());
     }
 
     @Test
