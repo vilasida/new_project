@@ -41,6 +41,23 @@ public class Sample6Task {
 //        "Test Text 4"
 //        "Test Text 5"
 //        "This is also a button"
+
+        System.out.println("Find element by id using xPath:");
+        System.out.println("\t text of element with id 'heading_2' is '" +
+                driver.findElement(By.xpath("//*[@id='heading_2']")).getText() + "'");
+        System.out.println("\t text of element with id 'Test Text 1' is '" +
+                driver.findElement(By.xpath("//p[contains(@class,'test')]")).getText() + "'");
+        System.out.println("\t text of element with id 'Test Text 2' is '" +
+                driver.findElement(By.xpath("//p[contains(@class,'twoTest')]")).getText() + "'");
+        System.out.println("\t text of element with id 'Test Text 3' is '" +
+                driver.findElement(By.xpath("//*[@id='test3']//p[1]")).getText() + "'");
+        System.out.println("\t text of element with id 'Test Text 4' is '" +
+                driver.findElement(By.xpath("//*[@id='test3']//p[2]")).getText() + "'");
+        System.out.println("\t text of element with id 'Test Text 5' is '" +
+                driver.findElement(By.xpath("//p[contains(text(),'5')]")).getText() + "'");
+        System.out.println("\t text of element with id 'buttonId' is '" +
+                driver.findElement(By.xpath("//input[@id='buttonId']")).getAttribute("value") + "'");
+
     }
 
     @Test
@@ -52,5 +69,9 @@ public class Sample6Task {
 //        "Test Text 2"
 //        "Test Text 3"
 //        "This is also a button"
+
+        System.out.println("Find element by id using CSS:");
+        System.out.println("\t text of element with id 'heading_2' is '" +
+                driver.findElement(By.cssSelector("#heading_2")).getText() + "'");
     }
 }
