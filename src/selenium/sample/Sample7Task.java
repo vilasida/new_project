@@ -42,8 +42,8 @@ public class Sample7Task {
     public void selectCheckBox() throws Exception {
 //         TODO:
 //        check that none of the checkboxes are ticked
-        List<WebElement> allElementsWithName = driver.findElements(By.name("vfb-6[]"));
-        for (WebElement elementWithName : allElementsWithName) {
+        List<WebElement> allElementsCheckbox = driver.findElements(By.name("vfb-6[]"));
+        for (WebElement elementCheckbox : allElementsCheckbox) {
             assertFalse(driver.findElement(By.name("vfb-6[]")).isSelected());
         }
 //        tick  "Option 2"
@@ -65,6 +65,10 @@ public class Sample7Task {
     public void selectRadioButton() throws Exception {
 //         TODO:
 //        check that none of the radio are selected
+        List<WebElement> allElementsRadio = driver.findElements(By.name("vfb-7"));
+        for (WebElement elementRadio : allElementsRadio) {
+            assertFalse(driver.findElement(By.name("vfb-7")).isSelected());
+        }
 //        select  "Option 3"
 //        check that "Option 1" and "Option 2' are not select, but "Option 3" is selected
 //        select  "Option 1"
