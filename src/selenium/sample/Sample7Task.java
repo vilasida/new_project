@@ -87,12 +87,18 @@ public class Sample7Task {
 
     @Test
     public void selectOption() throws Exception {
+        Select dropdown = new Select(driver.findElement(By.id("vfb-12")));
 //         TODO:
 //        select "Option 3" in Select
+        dropdown.selectByVisibleText("Option 3");
 //        check that selected option is "Option 3"
+        assertEquals("Option 3", dropdown.getFirstSelectedOption().getText());
 //        select "Option 2" in Select
+        dropdown.selectByVisibleText("Option 2");
 //        check that selected option is "Option 2"
+        assertEquals("Option 2", dropdown.getFirstSelectedOption().getText());
 //        click result
+        driver.findElement(By.id("result_button_select")).click();
 //        check that 'You selected option: Option 2' text is being displayed
     }
 
