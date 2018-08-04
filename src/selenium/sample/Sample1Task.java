@@ -20,9 +20,21 @@ public class Sample1Task {
         chromeDriver.close();
 //         TODO:
 //         define driver
+        System.setProperty("webdriver.chrome.driver", libWithDriversLocation + "chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
+
 //         go to https://kristinek.github.io/test-sample/index2.html
+        driver.get("https://kristinek.github.io/test-sample/index2.html");
+
 //         get title of page
+        System.out.println(driver.getTitle());
 //         get URL of current page
+
+        System.out.println(driver.getCurrentUrl());
+
+        Thread.sleep(5000);
+
 //         close browser
+        driver.close();
     }
 }

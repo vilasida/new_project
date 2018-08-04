@@ -80,24 +80,40 @@ public class Sample6Task {
     @Test
     public void findElementByCssName() throws Exception {
 //        System.out.println("1-2 ways to find text: \"Heading 2 text\"");
-//        System.out.println(driver.findElement().getText());
+////        System.out.println(driver.findElement().getText());
+//        System.out.println("\tThe text \"Heading 2 text:\"" +
+//                driver.findElement(By.cssSelector("h2:nth-of-type(2)")).getText());
+//        System.out.println("\tThe text \"Heading 2 text:\"" +
+//                driver.findElement(By.cssSelector("#heading_2")).getText());
+//        System.out.println("\tThe text \"Heading 2 text:\"" +
+//                driver.findElement(By.cssSelector("body h2:nth-of-type(2)")).getText());
+//        System.out.println("\tThe text \"Heading 2 text:\"" +
+//                driver.findElement(By.cssSelector("body > h2:nth-of-type(2)")).getText());
 //        System.out.println("-----------------------------------------");
-
-
 
 
 //        System.out.println("1-2 ways to find text: \"Test Text 1\"");
-//        System.out.println(driver.findElement(By.cssSelector()).getText());
+//        System.out.println("\t"+ driver.findElement(By.cssSelector("p[class='test']")).getText());
+//        System.out.println("\t"+ driver.findElement(By.cssSelector("div:nth-of-type(4) p")).getText());
+//        System.out.println("\t"+ driver.findElement(By.cssSelector("[class='test']")).getText());
 //        System.out.println("-----------------------------------------");
+
 //        System.out.println("1-2 ways to find text: \"Test Text 2\"");
-//        System.out.println(driver.findElement(By.cssSelector()).getText());
+//        System.out.println("\t"+ driver.findElement(By.cssSelector("p[class='twoTest']")).getText());
+//        System.out.println("\t"+ driver.findElement(By.cssSelector("div:nth-of-type(4) p:nth-of-type(2)")).getText());
+//        System.out.println("\t"+ driver.findElement(By.cssSelector("[class='twoTest']")).getText());
 //        System.out.println("-----------------------------------------");
+
 //        System.out.println("1-2 ways to find text: \"Test Text 3\"");
-//        System.out.println(driver.findElement(By.cssSelector()).getText());
+//        System.out.println("\t"+ driver.findElement(By.cssSelector("#test3 p")).getText());
+//        System.out.println("\t"+ driver.findElement(By.cssSelector("#test3>[class='test']")).getText());
 //        System.out.println("-----------------------------------------");
-//        System.out.println("1-2 ways to find text: \"This is also a button\"");
-//        System.out.println(driver.findElement(By.cssSelector()).getAttribute("value"));
-//        System.out.println("-----------------------------------------");
+
+        System.out.println("1-2 ways to find text: \"This is also a button\"");
+        System.out.println("\t"+ driver.findElement(By.cssSelector("#buttonId")).getAttribute("value"));
+
+        System.out.println("-----------------------------------------");
+
 //         TODO:
 //         1-2 ways to write css to
 //        "Heading 2 text":
